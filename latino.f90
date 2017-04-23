@@ -1,68 +1,34 @@
 
-MODULE latino
+MODULE LATINO
 
   CONTAINS
 
-  ! sort the values of an array in ascending order
-  SUBROUTINE SORT_ARRAY(N, X)
+    FUNCTION F(x)
 
         IMPLICIT NONE
-        REAL, DIMENSION(:), ALLOCATABLE :: X
-        INTEGER :: I, J, K, N
-        REAL :: temp
+        REAL, INTENT(IN):: X
+        REAL:: F
 
-! --- Sort the numbers into ascending order of magnitude 
+        F(x) = X**3. + X**2. - X*3. - 3
 
-L1:     DO J = 1, N
-L2:             DO K = J+1, N
-                        IF(X(J) > X(K)) THEN
-                                temp = X(K)
-                                X(K) = X(J)
-                                X(J) = temp
-                        END IF
-                END DO L2
-        END DO L1
-
-        WRITE(*,*) 'Array in ascending order'
-        DO i=1, n
-              WRITE(*,*) X(i)
-        END DO
-
-  END SUBROUTINE SORT_ARRAY
+    END FUNCTION F
 
 
-  ! calculate variance of values in an array
-  SUBROUTINE VARIANCE(N, X, aveValue, VAR)
+! calculate the next value of X using the Newton method for root finding.
+    FUNCTION NEXT_X
 
         IMPLICIT NONE
-        REAL, DIMENSION(:), ALLOCATABLE :: X
-        INTEGER:: N, i
-        REAL:: VAR, aveValue, SUM
-
-        VAR = 0.
-        DO i = 1, n
-          VAR = VAR + (X(i) - aveValue) ** 2
-        END DO
-
-        VAR = VAR / (n - 1)
-
-  END SUBROUTINE VARIANCE
+        REAL, INTENT(IN):: INPUT
 
 
-  ! calculate the average of values in an array
-  SUBROUTINE AVERAGE(N, X, aveValue)
+
+        END FUNCTION NEXT_X
+
+    SUBROUTINE FCN(xn, Fxn, DFxn)
 
         IMPLICIT NONE
-        REAL, DIMENSION(:), ALLOCATABLE :: X
-        INTEGER :: I, J, K, N
-        REAL :: aveValue
+        REAL, INTENT(IN):: xn
 
-        aveValue = 0
-        DO i=1, n
-              aveValue = aveValue + X(i)
-        END DO
-        aveValue = aveValue / n
+    END SUBROUTINE FCN
 
-  END SUBROUTINE AVERAGE
-
-END MODULE latino
+END MODULE LATINO
