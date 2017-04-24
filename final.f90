@@ -8,9 +8,11 @@ PROGRAM FINAL
     USE levine
        
     IMPLICIT NONE
-    REAL, EXTERNAL:: FCN, Fxn, DFxn,  x
+    REAL:: x 
     REAL:: x0, e1 = 10.e-12, e2 = 10.0e-12
     INTEGER:: nMax = 20, i
+    LOGICAL:: CONVERGES = .FALSE.
+
 
 ! PART A
     READ*, x0
@@ -19,15 +21,17 @@ PROGRAM FINAL
 
     DO i=0, nMax
 
-       CALL FCN(x0, e1, e2)
-       WRITE(*,*) i, x0
+       CALL FCN(x0, F, DF)
+       WRITE(*,*) i, 'iterations' , 'X=', x0
 
        ! test for convergence
-       IF (TRUE) then
-              WRITE(*,*) 'Converged at ', i, x0
+       CALL TEST_CONVERGENCE(CONVERGES, F, DF, x0)
 
+       IF (CONVERGES) then
+              WRITE(*,*) 'Converged at ', i, x0
+              STOP
        END IF
-END DO
+    END DO
 
     STOP
 END PROGRAM FINAL

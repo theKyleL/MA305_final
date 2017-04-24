@@ -18,7 +18,8 @@ prog.x: $(OBJS)
 	$(FC) -c -O $<
 
 run:	
-	./prog.x #< dat > out.out
+	./prog.x 
+#< dat > out.out
 
 clean:
 	rm -f *.o *.mod 

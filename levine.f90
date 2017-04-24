@@ -5,61 +5,78 @@ MODULE levine
   
   CONTAINS
 
-  SUBROUTINE lev
+      SUBROUTINE TEST_CONVERGENCE(CONVERGES, x0)
+      ! |1 − xn+1/xn| < ε1
+      ! |F (xn)| < ε2
+
+      USE latino
 
       IMPLICIT NONE
-      REAL::X,Y,Z
-      REAL,DIMENSION(:),ALLOCATABLE::A,B
-      REAL,DIMENSION(:,:),ALLOCATABLE::C,D
-      INTEGER::i,j,n,m
+      REAL:: x0, e1 = 10.e-12 !, e2 = 10.0e-12
+      LOGICAL:: CONVERGES
 
-      CALL random_number(X)
-      WRITE(*,*) ' X:', X
-      CALL random_number(Y)
-      WRITE(*,*) 'Y:', Y
+      IF (ABS(1-(x0+1/x0)) .LT. e1 .AND. ABS(F(x0)) .LT. e1) THEN
+        CONVERGES = .TRUE.
 
-      WRITE(*,*) ' OUTPUT'
+      END IF
 
-      n=10; m=20
-      ALLOCATE(A(n)); ALLOCATE(B(m))
-      call random_number(A); call random_number(B)
+    END SUBROUTINE TEST_CONVERGENCE
+    
+  ! SUBROUTINE lev
 
-      WRITE(*,*) 'A:'
-      DO i=1,n
-        WRITE(*,*) i, A(i)
-      END DO
+  !     IMPLICIT NONE
+  !     REAL::X,Y,Z
+  !     REAL,DIMENSION(:),ALLOCATABLE::A,B
+  !     REAL,DIMENSION(:,:),ALLOCATABLE::C,D
+  !     INTEGER::i,j,n,m
 
-      WRITE(*,*) 'B:'
-      DO i=1,n
-        WRITE(*,*) i, B(i)
-      END DO
+  !     CALL random_number(X)
+  !     WRITE(*,*) ' X:', X
+  !     CALL random_number(Y)
+  !     WRITE(*,*) 'Y:', Y
 
-      DEALLOCATE(A); DEALLOCATE(B)
+  !     WRITE(*,*) ' OUTPUT'
 
-      n=4; m=5
-      ALLOCATE(C(n,m)); ALLOCATE(D(m,n))
-      CALL random_number(C)
+  !     n=10; m=20
+  !     ALLOCATE(A(n)); ALLOCATE(B(m))
+  !     call random_number(A); call random_number(B)
 
-      do i=1,n
-        do j=1,m
-                D(j,i) = C(i,j)
-        END DO
-      END DO
+  !     WRITE(*,*) 'A:'
+  !     DO i=1,n
+  !       WRITE(*,*) i, A(i)
+  !     END DO
 
-      WRITE(*,*) ' C:'
-      DO i=1,n
-        WRITE(*,*) (C(i,j),j=1,m)
-      END DO
+  !     WRITE(*,*) 'B:'
+  !     DO i=1,n
+  !       WRITE(*,*) i, B(i)
+  !     END DO
 
-      WRITE(*,*) ' D:'
-      DO i=1,m
-        WRITE(*,*) (D(i,j),j=1,n)
-      END DO
+  !     DEALLOCATE(A); DEALLOCATE(B)
 
-      DEALLOCATE(C); DEALLOCATE(D)
+  !     n=4; m=5
+  !     ALLOCATE(C(n,m)); ALLOCATE(D(m,n))
+  !     CALL random_number(C)
 
-      STOP
-    END SUBROUTINE lev
+  !     do i=1,n
+  !       do j=1,m
+  !               D(j,i) = C(i,j)
+  !       END DO
+  !     END DO
+
+  !     WRITE(*,*) ' C:'
+  !     DO i=1,n
+  !       WRITE(*,*) (C(i,j),j=1,m)
+  !     END DO
+
+  !     WRITE(*,*) ' D:'
+  !     DO i=1,m
+  !       WRITE(*,*) (D(i,j),j=1,n)
+  !     END DO
+
+  !     DEALLOCATE(C); DEALLOCATE(D)
+
+  !     STOP
+  !   END SUBROUTINE lev
 
 END MODULE levine
 
