@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Problem Statement and Assumptions}{3}
+\contentsline {subsection}{\numberline {2.1}Newton Method for Root Finding}{3}
+\contentsline {subsection}{\numberline {2.2}Fractals from Newton Iterations}{3}
+\contentsline {section}{\numberline {3}Method/Analysis}{3}
+\contentsline {section}{\numberline {4}Solutions/Results}{3}
+\contentsline {subsection}{\numberline {4.1}A subsection}{4}
+\contentsline {subsubsection}{\numberline {4.1.1}A subsubsection}{4}
+\contentsline {subsubsection}{\numberline {4.1.2}A further subdivision}{4}
+\contentsline {section}{\numberline {5}Discussion/Conclusions}{4}
