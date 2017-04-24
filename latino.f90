@@ -3,31 +3,35 @@ MODULE LATINO
 
   CONTAINS
 
-    FUNCTION F(x)
+    FUNCTION Fxn(X)
 
         IMPLICIT NONE
         REAL, INTENT(IN):: X
-        REAL:: F
+        REAL:: Fxn, F
 
-        F(x) = X**3. + X**2. - X*3. - 3
+        F = X**3. + X**2. - X*3. - 3
 
-    END FUNCTION F
+    END FUNCTION Fxn
+
+    FUNCTION DFxn(X)
+
+      IMPLICIT NONE
+      REAL, INTENT(IN)::X
+      REAL:: DFxn, DF
+
+      DF = 3*X**2 + 2*X - 3
+
+    END FUNCTION DFxn
 
 
 ! calculate the next value of X using the Newton method for root finding.
-    FUNCTION NEXT_X
-
-        IMPLICIT NONE
-        REAL, INTENT(IN):: INPUT
-
-
-
-        END FUNCTION NEXT_X
-
     SUBROUTINE FCN(xn, Fxn, DFxn)
 
         IMPLICIT NONE
-        REAL, INTENT(IN):: xn
+        REAL:: xn
+        REAL:: Fxn, DFxn
+
+        xn = xn - (Fxn(xn)/DFxn(xn))
 
     END SUBROUTINE FCN
 
