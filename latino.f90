@@ -6,8 +6,8 @@ MODULE LATINO
     FUNCTION F(X)
 
         IMPLICIT NONE
-        REAL, INTENT(IN):: X
-        REAL:: F
+        DOUBLE PRECISION, INTENT(IN):: X
+        DOUBLE PRECISION:: F
 
         F = X**3. + X**2. - X*3. - 3
 
@@ -16,8 +16,8 @@ MODULE LATINO
     FUNCTION DF(X)
 
       IMPLICIT NONE
-      REAL, INTENT(IN)::X
-      REAL:: DFxn, DF
+      DOUBLE PRECISION, INTENT(IN)::X
+      DOUBLE PRECISION:: DFxn, DF
 
       DF = 3*X**2 + 2*X - 3
       RETURN
@@ -29,8 +29,8 @@ MODULE LATINO
     SUBROUTINE FCN(xn, Fxn, DFxn)
 
         IMPLICIT NONE
-        REAL:: xn
-        REAL:: Fxn, DFxn
+        DOUBLE PRECISION:: xn
+        DOUBLE PRECISION:: Fxn, DFxn
 
         xn = xn - (Fxn(xn)/DFxn(xn))
         RETURN

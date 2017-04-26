@@ -12,14 +12,16 @@ MODULE levine
       USE latino
 
       IMPLICIT NONE
-      REAL:: x0, x, e1 = 10.0e-12 , e2 = 10.0e-12
+      DOUBLE PRECISION:: x0, x, e1 = 10.0e-12 , e2 = 10.0e-12
       LOGICAL:: CONVERGES
 
-      WRITE(*,*) "VALUE 1 ", ABS(1-(x0+1/x0))
-      WRITE(*,*) "VALUE 2 ", ABS(F(x0))
+      WRITE(*,*) "x0: ", x0, "x:", x
+      WRITE(*,*) "F(x): ", F(x) 
+      WRITE(*,*) "VALUE 1 ", ABS(1-(x0/x))
+      WRITE(*,*) "VALUE 2 ", ABS(F(x))
       WRITE(*,*)
 
-      IF (ABS(1-(x0/x)) .LT. e1 .AND. ABS(F(x0)) .LT. e2) THEN
+      IF (ABS(1-(x0/x)) .LT. e1 .AND. ABS(F(x)) .LT. e2) THEN
         CONVERGES = .TRUE.
 
       END IF

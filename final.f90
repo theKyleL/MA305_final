@@ -8,8 +8,8 @@ PROGRAM FINAL
     USE levine
        
     IMPLICIT NONE
-    REAL:: x 
-    REAL:: x0, e1 = 10.e-12, e2 = 10.0e-12
+    DOUBLE PRECISION:: x 
+    DOUBLE PRECISION:: x0, e1 = 10.e-12, e2 = 10.0e-12
     INTEGER:: nMax = 20, i
     LOGICAL:: CONVERGES = .FALSE.
 
