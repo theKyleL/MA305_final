@@ -21,11 +21,13 @@ PROGRAM FINAL
 
     DO i=0, nMax
 
+       x = x0
        CALL FCN(x0, F, DF)
+
        WRITE(*,*) i, 'iterations ' , 'X=', x0
 
        ! test for convergence
-       CALL TEST_CONVERGENCE(CONVERGES, x0)
+       CALL TEST_CONVERGENCE(CONVERGES, x0, x)
 
        IF (CONVERGES) then
               WRITE(*,*) 'Converged at ', i, x0

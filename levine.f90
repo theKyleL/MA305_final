@@ -5,21 +5,21 @@ MODULE levine
   
   CONTAINS
 
-      SUBROUTINE TEST_CONVERGENCE(CONVERGES, x0)
+      SUBROUTINE TEST_CONVERGENCE(CONVERGES, x0, x)
       ! |1 − xn+1/xn| < ε1
       ! |F (xn)| < ε2
 
       USE latino
 
       IMPLICIT NONE
-      REAL:: x0, e1 = 10.e-12 !, e2 = 10.0e-12
+      REAL:: x0, x, e1 = 10.0e-12 , e2 = 10.0e-12
       LOGICAL:: CONVERGES
 
       WRITE(*,*) "VALUE 1 ", ABS(1-(x0+1/x0))
       WRITE(*,*) "VALUE 2 ", ABS(F(x0))
       WRITE(*,*)
 
-      IF (ABS(1-(x0+1/x0)) .LT. e1 .AND. ABS(F(x0)) .LT. e1) THEN
+      IF (ABS(1-(x0/x)) .LT. e1 .AND. ABS(F(x0)) .LT. e2) THEN
         CONVERGES = .TRUE.
 
       END IF
@@ -28,5 +28,4 @@ MODULE levine
 
 
 END MODULE levine
-
 
