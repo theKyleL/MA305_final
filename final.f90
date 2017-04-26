@@ -22,10 +22,10 @@ PROGRAM FINAL
     DO i=0, nMax
 
        CALL FCN(x0, F, DF)
-       WRITE(*,*) i, 'iterations' , 'X=', x0
+       WRITE(*,*) i, 'iterations ' , 'X=', x0
 
        ! test for convergence
-       CALL TEST_CONVERGENCE(CONVERGES, F, DF, x0)
+       CALL TEST_CONVERGENCE(CONVERGES, x0)
 
        IF (CONVERGES) then
               WRITE(*,*) 'Converged at ', i, x0
