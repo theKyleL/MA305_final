@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 APR 2017 18:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -165,7 +165,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `FinalProjectReport.toc'.
 
  [2] [3]
-Overfull \hbox (9.86711pt too wide) in paragraph at lines 76--77
+Overfull \hbox (9.86711pt too wide) in paragraph at lines 78--79
 \OT1/cmr/m/n/10.95 Interpret your so-lu-tion phys-i-cally, what we learn from i
 t, com-ment on strengths
  []
@@ -178,7 +178,7 @@ Here is how much of TeX's memory you used:
  5212 multiletter control sequences out of 15000+600000
  8551 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,5n,43p,497b,134s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,6n,43p,497b,134s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
@@ -187,7 +187,7 @@ blic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmti10.pfb>
-Output written on FinalProjectReport.pdf (4 pages, 93219 bytes).
+Output written on FinalProjectReport.pdf (4 pages, 95069 bytes).
 PDF statistics:
  45 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream

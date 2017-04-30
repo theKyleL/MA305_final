@@ -9,7 +9,8 @@ MODULE LATINO
         DOUBLE PRECISION, INTENT(IN):: X
         DOUBLE PRECISION:: F
 
-        F = X**3. + X**2. - X*3. - 3
+        !F = X**3. + X**2. - X*3. - 3
+        F = X**3. - X*2. - 5
 
     END FUNCTION F
 
@@ -19,7 +20,8 @@ MODULE LATINO
       DOUBLE PRECISION, INTENT(IN)::X
       DOUBLE PRECISION:: DFxn, DF
 
-      DF = 3*X**2 + 2*X - 3
+      !DF = 3*X**2 + 2*X - 3
+      DF = 3*X**2 - 2
       RETURN
 
     END FUNCTION DF
