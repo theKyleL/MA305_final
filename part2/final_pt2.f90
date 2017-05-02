@@ -2,38 +2,46 @@
 ! MA305 Final Project
 ! Fractals
 
-PROGRAM FINAL
+PROGRAM FINALpt2
 
-    USE latino
-    USE levine
+    USE latino_pt2
        
     IMPLICIT NONE
-    DOUBLE PRECISION:: x 
-    DOUBLE PRECISION:: x0, e1 = 10.e-12, e2 = 10.0e-12
-    INTEGER:: nMax = 20, i
-    LOGICAL:: CONVERGES = .FALSE.
+    REAL, ALLOCATABLE, DIMENSION(:):: AB
+    REAL, ALLOCATABLE, DIMENSION(:):: CD
+    REAL:: R, A, B, C, D
+    COMPLEX:: ZTGT, ZN, ZN1
+    INTEGER:: i, J, M, N, K
+
+    OPEN(unit=11,file='CONVERGED',status='unknown')
+
+    ! read data from fractal.dat file
+    READ(*,*) M, R, N, A, B, C, D
+
+    ALLOCATE(AB(M))
+    ALLOCATE(CD(M))
 
 
-! PART A
-    READ*, x0
+    CALL COMPLEXWINDOW(M, R, N, A, B, C, D, AB, CD)
 
-    WRITE(*,*) x0, nMax, e1, e2
+    ! CALL ESCAPETIME(ZN, ZN1)
 
-    DO i=0, nMax
+        do i=1,M 
+           do j=1,M
+            ZN = cmplx(AB(i),CD(j))
+            DO k=1, N
+              CALL ESCAPETIME(ZN, ZN1)
+              ZN = ZN1
+              if(abs(ZN).LE.R) then    
+                write(11,*) REAL(ZN), AIMAG(ZN)
+              endif    
+            END DO
+           enddo 
+        enddo 
 
-       x = x0
-       CALL FCN(x0, F, DF)
+       close(11)
 
-       WRITE(*,*) i, 'iterations ' , 'X=', x0
 
-       ! test for convergence
-       CALL TEST_CONVERGENCE(CONVERGES, x0, x)
-
-       IF (CONVERGES) then
-              WRITE(*,*) 'Converged at ', i, x0
-              STOP
-       END IF
-    END DO
 
     STOP
-END PROGRAM FINAL
+END PROGRAM FINALpt2

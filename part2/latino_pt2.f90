@@ -1,58 +1,66 @@
 
-MODULE LATINO
+MODULE LATINO_pt2
 
   CONTAINS
 
-    FUNCTION F(X)
+    FUNCTION Z(N)
 
         IMPLICIT NONE
-        DOUBLE PRECISION, INTENT(IN):: X
-        DOUBLE PRECISION:: F
+        COMPLEX, INTENT(IN):: N
+        COMPLEX:: Z
 
-        !F = X**3. + X**2. - X*3. - 3
-        F = X**3. - X*2. - 5
+        Z = N**3. - 1
 
-    END FUNCTION F
+    END FUNCTION Z
 
-    FUNCTION DF(X)
+    FUNCTION DZ(N)
 
       IMPLICIT NONE
-      DOUBLE PRECISION, INTENT(IN)::X
-      DOUBLE PRECISION:: DFxn, DF
+      COMPLEX, INTENT(IN)::N
+      COMPLEX:: DZ
 
-      !DF = 3*X**2 + 2*X - 3
-      DF = 3*X**2 - 2
+      DZ = 3*N**2 
       RETURN
 
-    END FUNCTION DF
+    END FUNCTION DZ
+
+    !newton's method on functions
+    SUBROUTINE ESCAPETIME(ZN, ZN1)
+
+      IMPLICIT NONE
+      ! COMPLEX:: ESCAPETIME
+      COMPLEX, INTENT(IN):: ZN
+      COMPLEX:: ZN1
+
+      ZN1 = ZN - (Z(ZN) / DZ(ZN))
+
+      RETURN
+    END SUBROUTINE ESCAPETIME
+
+
 
 
 ! calculate the next value of X using the Newton method for root finding.
-    SUBROUTINE FCN(xn, Fxn, DFxn)
+    SUBROUTINE COMPLEXWINDOW(M, R, N, A, B, C, D, AB, CD)
 
         IMPLICIT NONE
-        DOUBLE PRECISION:: xn
-        DOUBLE PRECISION:: Fxn, DFxn
+        REAL:: A, B, C, D, R, DAB, DCD
+        REAL, DIMENSION(0:M):: AB
+        REAL, DIMENSION(0:M):: CD
+        INTEGER:: M, N, I
 
-        xn = xn - (Fxn(xn)/DFxn(xn))
+        DAB = (ABS(A) + ABS(B)) / M
+        DCD = (ABS(B) + ABS(D)) / M
+
+      DO I=0, M
+        AB(I) = A + (DAB*I)
+        CD(I) = C + (DCD*I)
+      END DO 
+
         RETURN
 
-    END SUBROUTINE FCN
+    END SUBROUTINE COMPLEXWINDOW
 
-    ! SUBROUTINE TEST_CONVERGENCE(CONVERGES, F, DF)
-    !   ! |1 − xn+1/xn| < ε1
 
-    !   USE latino
-
-    !   IMPLICIT NONE
-    !   REAL:: x0, e1 = 10.e-12, e2 = 10.0e-12
-    !   LOGICAL:: CONVERGES
-
-    !   IF () THEN
-
-    !   END IF
-
-    ! END SUBROUTINE TEST_CONVERGENCE
-
-END MODULE LATINO
+END MODULE LATINO_pt2
 

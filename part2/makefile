@@ -5,11 +5,11 @@
 # Name of the compiler
 FC=gfortran
 
-SOURCES=latinoi_pt2.f90 levine_pt2.f90 final_pt2.f90
+SOURCES=latinoi_pt2.f90 final_pt2.f90
 #OUTFILES=out.out
 
 # List of object files
-OBJS=latino_pt2.o levine_pt2.o final_pt2.o
+OBJS=latino_pt2.o final_pt2.o
 
 prog.x: $(OBJS)
 	$(FC) $(OBJS) -o $@
@@ -18,8 +18,7 @@ prog.x: $(OBJS)
 	$(FC) -c -O $<
 
 run:	
-	./prog.x 
-#< dat > out.out
+	./prog.x < fractal.dat
 
 clean:
 	rm -f *.o *.mod 
