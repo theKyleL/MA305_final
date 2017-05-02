@@ -5,11 +5,11 @@
 # Name of the compiler
 FC=gfortran
 
-SOURCES=latino.f90 levine.f90 final.f90
+SOURCES=latinoi_pt2.f90 levine_pt2.f90 final_pt2.f90
 #OUTFILES=out.out
 
 # List of object files
-OBJS=latino.o levine.o final.o
+OBJS=latino_pt2.o levine_pt2.o final_pt2.o
 
 prog.x: $(OBJS)
 	$(FC) $(OBJS) -o $@
