@@ -2,9 +2,8 @@
 \contentsline {section}{\numberline {2}Problem Statement and Assumptions}{3}
 \contentsline {subsection}{\numberline {2.1}Newton Method for Root Finding}{3}
 \contentsline {subsection}{\numberline {2.2}Fractals from Newton Iterations}{3}
-\contentsline {section}{\numberline {3}Method/Analysis}{3}
-\contentsline {section}{\numberline {4}Solutions/Results}{4}
-\contentsline {subsection}{\numberline {4.1}Newton Method}{4}
-\contentsline {subsubsection}{\numberline {4.1.1}Newton's Cubit}{4}
-\contentsline {subsubsection}{\numberline {4.1.2}A further subdivision}{4}
-\contentsline {section}{\numberline {5}Discussion/Conclusions}{4}
+\contentsline {section}{\numberline {3}Method/Analysis}{4}
+\contentsline {section}{\numberline {4}Solutions/Results}{5}
+\contentsline {subsection}{\numberline {4.1}Newton Method}{5}
+\contentsline {subsubsection}{\numberline {4.1.1}Newton's Cubit}{5}
+\contentsline {section}{\numberline {5}Discussion/Conclusions}{5}

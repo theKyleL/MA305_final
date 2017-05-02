@@ -42,7 +42,7 @@ Fractals are interesting and arguably beautiful representations of repetition at
 
 \section{Problem Statement and Assumptions}\label{S:2}
 %The text of this section. 
-This project is broken into two distinct parts. Part 1 requires that the Newton Method for root finding is implemented in Fortran. This is relatively simple as it only requires converting the method into an algorithm and transcribing the alogrithm to code. Part 2 in considerably more sophisticated. In part 2 we use the Newton Method to calculate points on a plane and tested the points for convergence. If they were found to converge, the points were written to a file and fed to gnuplot to display the 
+This project is broken into two distinct parts. Part 1 requires that the Newton Method for root finding is implemented in Fortran. This is relatively simple as it only requires converting the method into an algorithm and transcribing the alogrithm to code. Part 2 in considerably more sophisticated. In part 2 we use the Newton Method to calculate points on a plane and tested the points for convergence. If they were found to converge, the points were written to a file and fed to gnuplot to display the resulting fractal.
 
 
 \subsection{Newton Method for Root Finding}\label{S:2.1}
@@ -51,7 +51,7 @@ In 1671 Sir Iaasic Newton developed a method for determining the roots of an equ
 
 \subsection{Fractals from Newton Iterations}\label{S:2.2}
 %Text introducing this subsection.
-Using the Newton Method for root finding we will generate points and plot them using the open source tool gnuplot. To do this we set up a dat file named "fractal.dat" with the parameters this program to be "400 0.2 20 -1.2 1.2 -1.2 1.2" which are the values for M, R, N, A, B, C, and D respectively. We then wrote functions to calculate the value given a complex input for the given equation and its derivative in order to be able to compute the Escape-Time algorithm in order to complete the convergence tests. By running the Escape-Time algorithm for N iterations over an M+1 x M+1 matrix of complex numbers we were able to isolate the points that showed fractal structures along the ±60 and 180 degree rays for the first case. This convergence was determined by comparing the difference of the target function R. The target value was set to be one of each of the functions three roots, [/1+(0*i), .5+(sqrt(3)/2)*i, .5-(sqrt(3)/2)*i/] for the first equation /[(z^3) - 1/] and its derivative /[3*(z^2)/] in conjunction with the Escape-Time algorithm for Newton's iterations /[z0 = z, zn+1 = zn − F(zn)/F0(zn), n = 0, · · · , Nmax./]. For the relaxed Newton method /[z0 = z, zn+1 = zn − 2*F(zn)/F0(zn), n = 0, · · · , Nmax./] the function /[((z+1)^2)*((z^2)+0.25)/], its roots, /[-1+(0*i), -.5*i, .5+i/], and its derivative /[(4*(z^3))+(6*(z^2))+(3*z)+0.5/]. These different methods produced complex fractal patterns and were tested with varying input parameters. .
+Using the Newton Method for root finding we will generate points and plot them using the open source tool gnuplot. To do this we set up a dat file named "fractal.dat" with the parameters this program to be "400 0.2 20 -1.2 1.2 -1.2 1.2" which are the values for M, R, N, A, B, C, and D respectively. We then wrote functions to calculate the value given a complex input for the given equation and its derivative in order to be able to compute the Escape-Time algorithm in order to complete the convergence tests. By running the Escape-Time algorithm for N iterations over an M+1 x M+1 matrix of complex numbers we were able to isolate the points that showed fractal structures along the ±60 and 180 degree rays for the first case. This convergence was determined by comparing the difference of the target function R. The target value was set to be one of each of the functions three roots, \[1+(0*i), .5+(sqrt(3)/2)*i, .5-(sqrt(3)/2)*i\] for the first equation \[(z^3) - 1\] and its derivative \[3*(z^2)\] in conjunction with the Escape-Time algorithm for Newton's iterations. \[z0 = z, zn+1 = zn − F(zn)/F0(zn), n = 0, · · · , Nmax.\] For the relaxed Newton method, \[z0 = z, zn+1 = zn − 2*F(zn)/F0(zn), n = 0, · · · , Nmax.\] the function, \[((z+1)^2)*((z^2)+0.25)\] its roots, \[-1+(0*i), -.5*i, .5+i\] and its derivative. \[(4*(z^3))+(6*(z^2))+(3*z)+0.5\] These different methods produced complex fractal patterns and were tested with varying input parameters. 
 
 
 
@@ -62,7 +62,7 @@ Begin with naming or characterizing the method/approach to be used, perhaps expl
 
 \section{Solutions/Results}\label{S:4}
 %Text introducing this section
-Using a Ubuntu terminal we remotely connected to the WXSession server via a secure shell and 
+Using a Ubuntu terminal we remotely connected to the WXSession server via a secure shell in order to gain access to the GNUplot tool.
 
 \subsection{Newton Method}
 %
@@ -74,18 +74,13 @@ Function roots: -1.7320508075688772, -1, 1.7320508075688774
 Newton famously used this method to solve only one function known as Newton's Cubit. \[F(x)=x^3-2x-5\]
 Function root: 2.0945514815423265  
 
-\subsubsection{A further subdivision}
-%
-Text introducing this subsubsection. 
-
 \section{Discussion/Conclusions}\label{S:5}
 %Text introducing this subsection
-Interpret your solution physically, what we learn from it, comment on strengths and weaknesses of the solution method, any nice features you want to brag about, possible ways to improve it (e.g. how to make it more accurate, more efficient), as appropriate.
-
+We learned more about fractals, such as how they are developed over multiple iterations. The next project should have the 'chaos game' and/or 'Conway's game of life.' Or other fun computational problems that can take advantage of Monte Carlo Simulations.
 
 \begin{thebibliography}{100}
 \bibitem{a1}  
-Heath, Michael T., Scientific Computing: An Introductory Survey, McGraw Hill, 2002.
+Dr. Khanal , Final Project assignment handout, 2017.
 %
 %\bibitem{a2}
 %
