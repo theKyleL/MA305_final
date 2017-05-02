@@ -32,7 +32,7 @@ Kyle Latino \& Thomas Levine
 %%%%%%%%%%  %%%%%%%%%%
 \section{Introduction}\label{S:1}
 %The text of this section.
-Fractals are interesting and arguably beautiful representations of repetition at varying scales. Some notable fractals are the Serpensky Triangle or the Menger Sponge. These figures have some interesting characteristics such as visibly repetitive patterns at any zoom and theoretically infinite surface area. The Menger Sponge can be found in modern wireless devices as its massive surface area allows it to be used as an antenna while maintaining a very compact size.
+Fractals are interesting and arguably beautiful representations of repetition at varying scales. Some notable fractals are the Sierpinsky Triangle or the Menger Sponge. These figures have some interesting characteristics such as visibly repetitive patterns at any zoom and theoretically infinite surface area. The Menger Sponge can be found in modern wireless devices as its massive surface area allows it to be used as an antenna while maintaining a very compact size.
 
 
 \section{Problem Statement and Assumptions}\label{S:2}
@@ -48,7 +48,9 @@ In 1669 Sir Iaasic Newton developed a method for determining the roots of an equ
 
 \subsection{Fractals from Newton Iterations}\label{S:2.2}
 %Text introducing this subsection.
-Using the Newton Method for root finding we will generate points and plot them using the open source tool gnuplot.
+Using the Newton Method for root finding we will generate points and plot them using the open source tool gnuplot. To do this we set up a dat file named "fractal.dat" with the parameters this program to be "400 0.2 20 -1.2 1.2 -1.2 1.2" which are the values for M, R, N, A, B, C, and D respectively. We then wrote functions to calculate the value given a complex input for the given equation and its derivative in order to be able to compute the Escape-Time algorithm in order to complete the convergence tests. By running the Escape-Time algorithm for N iterations over an M+1 x M+1 matrix of complex numbers we were able to isolate the points that showed fractal structures along the ±60 and 180 degree rays for the first case. This convergence was determined by comparing the difference of the target function R. The target value was set to be one of each of the functions three roots, [/1+(0*i), .5+(sqrt(3)/2)*i, .5-(sqrt(3)/2)*i/] for the first equation /[(z^3) - 1/] and its derivative /[3*(z^2)/] in conjunction with the Escape-Time algorithm for Newton's iterations /[z0 = z, zn+1 = zn − F(zn)/F0(zn), n = 0, · · · , Nmax./]. For the relaxed Newton method /[z0 = z, zn+1 = zn − 2*F(zn)/F0(zn), n = 0, · · · , Nmax./] the function /[((z+1)^2)*((z^2)+0.25)/], its roots, /[-1+(0*i), -.5*i, .5+i/], and its derivative /[(4*(z^3))+(6*(z^2))+(3*z)+0.5/]. These different methods produced complex fractal patterns and were tested with varying input parameters. .
+
+
 
 \section{Method/Analysis}\label{S:3}
 %Text introducing this section
