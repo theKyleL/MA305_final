@@ -21,6 +21,11 @@ Kyle Latino \& Thomas Levine
 \\[0.4cm]
 23 April 2017 % change this
 \end{center}
+
+\begin{center}
+\rotatebox{0}{\includegraphics[scale=0.5]{everything.png} }
+\end{center}
+
 \thispagestyle{empty}
 \newpage
 \begin{abstract}
@@ -37,14 +42,12 @@ Fractals are interesting and arguably beautiful representations of repetition at
 
 \section{Problem Statement and Assumptions}\label{S:2}
 %The text of this section. 
-State fully and precisely the mathematical problem. 
-State any assumptions made for the formulation of the model. 
-Explain meaning of all symbols used. Make clear what is given and what we are looking for. 
+This project is broken into two distinct parts. Part 1 requires that the Newton Method for root finding is implemented in Fortran. This is relatively simple as it only requires converting the method into an algorithm and transcribing the alogrithm to code. Part 2 in considerably more sophisticated. In part 2 we use the Newton Method to calculate points on a plane and tested the points for convergence. If they were found to converge, the points were written to a file and fed to gnuplot to display the 
 
 
 \subsection{Newton Method for Root Finding}\label{S:2.1}
 %Text introducing this subsection. 
-In 1669 Sir Iaasic Newton developed a method for determining the roots of an equation. The pretense is: given an equation and an initial estimate for the root, you can iteratively approach the true root of the function. This method is superior to the simple bisection method in that it not only requires fewer input variables but also reaches the true value in fewer iterations. 
+In 1671 Sir Iaasic Newton developed a method for determining the roots of an equation. The pretense is: given an equation and an initial estimate for the root, you can iteratively approach the true root of the function. This method is superior to the simple bisection method in that it not only requires fewer input variables but also reaches the true value in fewer iterations. 
 
 \subsection{Fractals from Newton Iterations}\label{S:2.2}
 %Text introducing this subsection.

@@ -9,7 +9,7 @@ MODULE LATINO_pt2
         COMPLEX, INTENT(IN):: N
         COMPLEX:: Z
 
-        Z = N**3. - 1
+        Z = ((N+1)**2)*((N**2)+0.25)
 
     END FUNCTION Z
 
@@ -19,7 +19,7 @@ MODULE LATINO_pt2
       COMPLEX, INTENT(IN)::N
       COMPLEX:: DZ
 
-      DZ = 3*N**2 
+      DZ = (4*(N**3))+(6*(N**2))+(3*N)+0.5
       RETURN
 
     END FUNCTION DZ
@@ -32,7 +32,7 @@ MODULE LATINO_pt2
       COMPLEX, INTENT(IN):: ZN
       COMPLEX:: ZN1
 
-      ZN1 = ZN - (Z(ZN) / DZ(ZN))
+      ZN1 = ZN - (2*Z(ZN) / DZ(ZN))
 
       RETURN
     END SUBROUTINE ESCAPETIME

@@ -13,7 +13,7 @@ PROGRAM FINALpt2
     COMPLEX:: ZTGT, ZN, ZN1
     INTEGER:: i, J, M, N, K
 
-    OPEN(unit=11,file='CONVERGED',status='unknown')
+    OPEN(unit=11,file='CONVERGED1',status='unknown')
 
     ! read data from fractal.dat file
     READ(*,*) M, R, N, A, B, C, D
@@ -24,7 +24,9 @@ PROGRAM FINALpt2
 
     CALL COMPLEXWINDOW(M, R, N, A, B, C, D, AB, CD)
 
-    ! CALL ESCAPETIME(ZN, ZN1)
+    !ZTGT = CMPLX(1, 0)
+    !ZTGT = CMPLX(0, .5)
+    ZTGT = CMPLX(0, .5)
 
         do i=1,M 
            do j=1,M
@@ -32,8 +34,10 @@ PROGRAM FINALpt2
             DO k=1, N
               CALL ESCAPETIME(ZN, ZN1)
               ZN = ZN1
-              if(abs(ZN).LE.R) then    
-                write(11,*) REAL(ZN), AIMAG(ZN)
+              if(ABS(ZN - ZTGT).LE.R) then    
+                write(11,*) AB(i), CD(j)
+                !write(11,*) REAL(ZN), AIMAG(ZN)
+                EXIT
               endif    
             END DO
            enddo 
